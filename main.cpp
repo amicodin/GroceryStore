@@ -9,11 +9,13 @@ int main()
   int numItems = 0;
   char input;
   string item;
-  cout<<"\n==GROCERY LIST MANAGER==";
+  
   
   
   do 
   {
+  cout<<"\n==GROCERY LIST MANAGER==";
+        
   cout<<"\nEnter your choice: ";
   cout<<"\n (A)dd an item";
   cout<<"\n (Q)uit";
@@ -38,5 +40,11 @@ int main()
      {}
   }
   while( input != 'Q' &&  input != 'q');
+  cout<<"==ITEMS TO BUY=="<<endl;  
+  for (int i = 0; i<5; i++)
+  {
+   cout<<i+1<<" "<<list[i]<<endl;
+  }
+
   return 0;
 }
