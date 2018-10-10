@@ -22,8 +22,9 @@ int main()
   if (numItems != 0)
   {
   cout<<"\n (D)elete last item";        
-  cout<<"\n (Q)uit";
+  
   }
+  cout<<"\n (Q)uit";
   cout<<"\nYour choice (A/Q): ";
   cin>>input;
 
