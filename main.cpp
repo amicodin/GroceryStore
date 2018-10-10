@@ -1,11 +1,12 @@
 // Author: Anthony Micodin
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 int main()
 {
-  string list[5]; //array of 5 strings
+  vector <string> list; //vector of strings
   int numItems = 0;
   char input;
   string item;
@@ -18,7 +19,11 @@ int main()
         
   cout<<"\nEnter your choice: ";
   cout<<"\n (A)dd an item";
+  if (numItems != 0)
+  {
+  cout<<"\n (D)elete last item";        
   cout<<"\n (Q)uit";
+  }
   cout<<"\nYour choice (A/Q): ";
   cin>>input;
 
@@ -28,23 +33,32 @@ int main()
      cin>>item;
       if ( numItems <  5 )
       {
-              list[numItems] = item;
+              list.push_back(item);
               numItems ++;
-      }
+      
+    }
       else 
       {
               cout<<"You'll need a bigger list!"<<endl;
       }
    }
-   else
-     {}
+   else if ( numItems > 0 && ( input =='d' || input =='D' ))
+     {
+     cout<<list[numItems - 1]<<" was deleted from the list. \n";
+     list.pop_back();
+     numItems --;
+     }
   }
-  while( input != 'Q' &&  input != 'q');
+  while(   input != 'Q' &&  input != 'q');
   cout<<"==ITEMS TO BUY=="<<endl;  
-  for (int i = 0; i<5; i++)
+  for (int i = 0; i<numItems; i++)
   {
    cout<<i+1<<" "<<list[i]<<endl;
   }
-
+ if ( numItems == 0)
+ {
+         cout<<"No items to buy!"<<endl;
   return 0;
-}
+ }
+ }
+
